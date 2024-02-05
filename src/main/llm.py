@@ -8,8 +8,8 @@ load_dotenv()
 def query_llm(prompt):
 
     #TODO
-    api_url = os.environ['HUGGINGFACE_API_URL']
-    api_key = os.environ['HUGGINGFACE_API_KEY']
+    api_url = os.environ['LLM_URL']
+    api_key = os.environ['HUGGING_FACE_KEY']
     
     req_header = {
         "Authorization": f"Bearer {api_key}"
@@ -20,5 +20,5 @@ def query_llm(prompt):
     #print("Request Body", prompt)
     #TODO
     response = requests.post(api_url, headers=req_header, json=prompt)    
-    #print("Response Body", response.json())
+    print("Response Body", response.json())
     return response.json()

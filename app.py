@@ -1,12 +1,14 @@
-from hugging_face_client import query_llm 
+from src.main.llm import query_llm 
 
       
 # Additional information that LLM does not know
 f = open("context.txt", "r")
 context = f.read()
+f.close()
 
 # Question about the context that LLM wouldn't know otherwise
-user_question = "What is Auryn's favorite food?"
+#user_question = "What is Auryn's favorite food?"
+user_question = input("Enter your prompt \n")
 
 rag = {        
     "parameters": {
